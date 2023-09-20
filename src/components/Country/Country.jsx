@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const Country = ({ country }) => {
-    const { name, flags, continents } = country;
+    const { name, flags, continents, cca3 } = country;
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure>
@@ -9,9 +11,11 @@ const Country = ({ country }) => {
                 <h2 className="card-title">{name.common}</h2>
                 <p>{continents}</p>
                 <div className="card-actions justify-center">
-                    <button className="btn btn-info text-white mt-6">
-                        Details
-                    </button>
+                    <Link to={`/countries/${cca3}`}>
+                        <button className="btn btn-info text-white mt-6">
+                            Details
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

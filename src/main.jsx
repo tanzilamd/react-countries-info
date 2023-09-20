@@ -8,6 +8,7 @@ import About from "./components/About/About.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import Countries from "./components/Countries/Countries.jsx";
 import ErrorPage from "./error-page.jsx";
+import CountryDetails from "./components/CountryDetails/CountryDetails.jsx";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,14 @@ const router = createBrowserRouter([
                 path: "/countries",
                 loader: () => fetch("https://restcountries.com/v3.1/all"),
                 element: <Countries></Countries>,
+            },
+            {
+                path: "/countries/:cca3",
+                loader: ({ params }) =>
+                    fetch(
+                        `https://restcountries.com/v3.1/alpha/${params.cca3}`
+                    ),
+                element: <CountryDetails></CountryDetails>,
             },
             {
                 path: "/about",

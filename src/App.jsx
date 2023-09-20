@@ -5,15 +5,16 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 
 function App() {
-    const [count, setCount] = useState(0);
+    const navigation = useNavigation();
 
     return (
         <>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            {navigation.state === "loading" ? "Loading..." : <Outlet></Outlet>}
+
             <Footer></Footer>
         </>
     );

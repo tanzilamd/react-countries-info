@@ -1,9 +1,16 @@
-import { useRouteError } from "react-router-dom";
+import { Link, useRouteError, useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 
 export default function ErrorPage() {
     const error = useRouteError();
-    console.error(error);
+    // console.error(error);
+
+    const navigate = useNavigate();
+
+    const previousPage = () => {
+        navigate(-1);
+        console.log("navigated");
+    };
 
     return (
         <div id="error-page">
@@ -16,6 +23,13 @@ export default function ErrorPage() {
                 <p>
                     <i>{error.statusText || error.message}</i>
                 </p>
+
+                <button
+                    onClick={previousPage}
+                    className="btn btn-error text-white"
+                >
+                    Go Back!
+                </button>
             </div>
         </div>
     );
