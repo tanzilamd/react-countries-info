@@ -7,7 +7,7 @@ const Navbar = () => {
     const [openIcon, setOpenIcon] = useState(false);
 
     return (
-        <nav className=" py-4 bg-[#E5E6E6] text-[#1F2937] md:flex justify-center">
+        <nav className=" py-4 bg-[#E5E6E6] text-[#1F2937] md:flex justify-center z-40">
             <div
                 className="inline-block md:hidden cursor-pointer pl-2"
                 onClick={() => {
@@ -21,9 +21,9 @@ const Navbar = () => {
                 )}
             </div>
             <ul
-                className={`flex flex-col md:flex-row md:flex font-bold text-md gap-4 absolute md:static bg-slate-300 md:bg-transparent p-6 md:p-0 left-2 w-3/5 md:w-fit duration-500 ${
+                className={`flex flex-col md:flex-row md:flex font-bold text-md gap-x-10 gap-y-4 absolute md:static bg-slate-300 md:bg-transparent p-6 md:p-0 left-2 w-3/5 md:w-fit duration-500 ${
                     openIcon ? "top-14" : "-top-60"
-                }`}
+                } z-40`}
             >
                 <Link to="/" className="hover:underline">
                     Home
