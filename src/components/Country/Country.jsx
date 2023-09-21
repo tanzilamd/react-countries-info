@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import "./Country.css";
 
 const Country = ({ country }) => {
     const { name, flags, continents, cca3 } = country;
     return (
-        <div className="card bg-base-100 shadow-xl">
-            <figure>
+        <div className="card bg-base-100 card-shadow">
+            <figure className="pt-4">
                 <img src={flags.png} alt="Shoes" />
             </figure>
             <div className="card-body">

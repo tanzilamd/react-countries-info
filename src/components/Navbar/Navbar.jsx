@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { GrClose } from "react-icons/gr";
 import { useState } from "react";
+import "./Navbar.css";
 
 const Navbar = () => {
     const [openIcon, setOpenIcon] = useState(false);
@@ -25,18 +26,18 @@ const Navbar = () => {
                     openIcon ? "top-14" : "-top-60"
                 } z-40`}
             >
-                <Link to="/" className="hover:underline">
+                <NavLink to="/" className="hover:underline">
                     Home
-                </Link>
-                <Link to="/countries" className="hover:underline">
+                </NavLink>
+                <NavLink to="/countries" className="hover:underline">
                     Countries
-                </Link>
-                <Link to="/about" className="hover:underline">
+                </NavLink>
+                <NavLink to="/about" className="hover:underline">
                     About
-                </Link>
-                <Link to="/contact" className="hover:underline">
+                </NavLink>
+                <NavLink to="/contact" className="hover:underline">
                     Contact
-                </Link>
+                </NavLink>
             </ul>
         </nav>
     );
